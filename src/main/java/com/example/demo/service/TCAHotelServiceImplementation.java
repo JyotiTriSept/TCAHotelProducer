@@ -43,7 +43,7 @@ public class TCAHotelServiceImplementation {
     private static final String GROUPCODE="GroupCode";
     private static final String RETRY="Retried TCA Get Hotel Api call: ";
     private static final String AUTHHEADERNAME="Authorization";
-    private static final String BEARER="Bearer";
+    private static final String BEARER="Bearer ";
     private static final String EMPTYRESPONSE="Empty response from TCA get Hotel Api call";
 	
 	public static List<EventData> list = new ArrayList<EventData>();
