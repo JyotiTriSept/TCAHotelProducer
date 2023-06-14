@@ -37,7 +37,7 @@ public class ProducerController {
 		UUID uuid = UUID. randomUUID();
 		
 		long before = System.currentTimeMillis();
-		LOGGER.info("Request id: "+uuid+" Fetch the bearer token");
+		LOGGER.info("Request id: "+uuid+" Fetching the bearer token from TCA");
 		
 		String loginToken = loginService.getLoginToken(uuid);
 		LOGGER.info("Request id: "+uuid+" Fetching Hotel Data");
