@@ -1,0 +1,23 @@
+name: Build a Docker image and Push it to ACR
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: azure/docker-login@v1
+        with:
+           login-server: tcacontainterregs.azurecr.io
+           username: TCAContainterRegs
+           password: mzygmrDhf764J3fb+Y27fb3oe0NH8n7HLcjBaMn2RF+ACRCWQbvm
+      - run: |
+          docker build . -t tcacontainterregs.azurecr.io/tcahotelproducer:${{ github.sha }}
+          docker push tcacontainterregs.azurecr.io/tcahotelproducer:${{ github.sha }}
